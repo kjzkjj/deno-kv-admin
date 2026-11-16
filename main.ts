@@ -150,5 +150,9 @@ Deno.cron("Hourly DB Reset", "0 * * * *", async () => {
   }
   console.log("Hourly reset keys deleted:", count, keys);
 });
+await kv.set(["py4e", "chapter01_1860398"], { "text": "building on your left Your friend is very late and calls you to" });
+await kv.set(["books", "isbn", "8151"], {"author": "Chuck", "title": "Net", "isbn": "8151"});
+await kv.set(["books", "title", "Net", "8151"], "8151");
+await kv.set(["books", "author", "Chuck", "8151"], "8151");
 // Автоматически создаем тестовую запись для 
 Deno.serve(app.fetch);
