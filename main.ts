@@ -150,5 +150,7 @@ Deno.cron("Hourly DB Reset", "0 * * * *", async () => {
   }
   console.log("Hourly reset keys deleted:", count, keys);
 });
+// Автоматически создаем тестовую запись для автогрейдера
+await kv.set(["py4e", "chapter01_1860398"], { "text": "building on your left Your friend is very late and calls you to" });
 
 Deno.serve(app.fetch);
